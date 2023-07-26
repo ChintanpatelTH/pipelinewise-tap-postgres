@@ -130,7 +130,7 @@ def _get_select_sql(params):
     table_name = params['table_name']
 
     limit_statement = f'LIMIT {params["limit"]}' if params["limit"] else ''
-    where_statement = f"WHERE {replication_key} >= '{replication_key_value}'::{replication_key_sql_datatype}" \
+    where_statement = f"WHERE {replication_key} > '{replication_key_value}'::{replication_key_sql_datatype}" \
         if replication_key_value else ""
 
     select_sql = f"""
